@@ -9,35 +9,40 @@ const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const gulpStylelint = require('gulp-stylelint');
 var replace = require('gulp-replace');
 
 
 // File paths
 const files = {
-    scssPath: 'app/scss/**/*.scss',
-    jsPath: 'app/js/**/*.js'
+    stylesPath: 'src/scss/**/*.{sass,scss,css}',
+	scriptsPath: 'src/js/**/*.js',
+	distPath: 'dist'
 }
 
 // Sass task: compiles the style.scss file into style.css
 function scssTask(){
-    return src(files.scssPath)
+	return src(files.stylesPath)
+		.pipe(gulpStylelint({
+			fix: true
+		}))
         .pipe(sourcemaps.init()) // initialize sourcemaps first
         .pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(dest('dist')
+		.pipe(dest('distPath')
     ); // put final CSS in dist folder
 }
 
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask(){
     return src([
-        files.jsPath
+        files.scriptsPath
         //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
         ])
         .pipe(concat('all.js'))
         .pipe(uglify())
-        .pipe(dest('dist')
+		.pipe(dest('distPath')
     );
 }
 
@@ -52,7 +57,7 @@ function cacheBustTask(){
 // Watch task: watch SCSS and JS files for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask(){
-    watch([files.scssPath, files.jsPath],
+    watch([files.stylesPath, files.scriptsPath],
         {interval: 1000, usePolling: true}, //Makes docker work
         series(
             parallel(scssTask, jsTask),
