@@ -1,0 +1,12 @@
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--cl-footer-bgc);
+}
+:root {
+	--cl-beige: #ffffff;
+	--cl-bg-global: var(--cl-beige);
+	--cl-footer-bgc: var(--cl-bg-global);
+}

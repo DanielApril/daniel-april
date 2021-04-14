@@ -1,0 +1,5 @@
+:root {
+	--cl-beige: #ffffff;
+	--cl-bg-global: var(--cl-beige);
+	--cl-footer-bgc: var(--cl-bg-global);
+}
