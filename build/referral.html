@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Даниэль Пасько - верстальщик</title>
+    <title>Рефералки</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A simple boilerplate using Gulp, Jade, Stylus and Browsersync.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-touch-icon-72x72.png">
@@ -28,12 +25,11 @@
     <meta name="msapplication-TileImage" content="assets/img/favicon/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body class="index-page">
+  <body class="referral-page">
     <header class="page-header">
       <div class="container">
-        <button class="button icon" type="button" id="toggle-fullscreen"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.478 1.565v5.218c0 .574-.47 1.043-1.043 1.043-.574 0-1.044-.47-1.044-1.043V4.096l-6.052 6.052a1.03 1.03 0 01-.73.313 1.03 1.03 0 01-.73-.313 1.04 1.04 0 010-1.487l6.025-6.052h-2.687c-.573 0-1.043-.47-1.043-1.044 0-.574.47-1.043 1.043-1.043h5.218c.287 0 .548.104.73.313a.947.947 0 01.313.73zm-1.043 14.609c-.574 0-1.044.47-1.044 1.043v2.687l-5.947-5.895a1.07 1.07 0 00-1.54 1.487L19.8 21.39h-2.687c-.574 0-1.043.47-1.043 1.044 0 .574.47 1.043 1.043 1.043h5.217c.287 0 .6-.104.783-.313.209-.209.365-.47.365-.73v-5.218c0-.573-.47-1.043-1.043-1.043zM8.557 13.957l-5.948 5.947v-2.687c0-.573-.47-1.043-1.044-1.043-.574 0-1.043.47-1.043 1.043v5.218c0 .287.104.548.313.73.208.209.47.313.756.313H6.81c.574 0 1.043-.47 1.043-1.043 0-.574-.47-1.044-1.043-1.044H4.096l5.947-5.947c.418-.418.392-1.07 0-1.488-.39-.417-1.07-.417-1.486 0zM4.096 2.713h2.687c.574 0 1.043-.47 1.043-1.043 0-.574-.47-1.044-1.043-1.044H1.565a.947.947 0 00-.73.313.947.947 0 00-.313.73v5.218c0 .574.47 1.043 1.043 1.043.574 0 1.044-.47 1.044-1.043V4.174L8.635 10.2c.208.209.47.313.73.313.261 0 .522-.104.73-.313a1.04 1.04 0 000-1.487l-6-6z"/></svg></button>
-        <div></div>
-        <button class="button icon" type="button" id="toggle-color-scheme"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.183A5.823 5.823 0 006.183 12 5.823 5.823 0 0012 17.817 5.823 5.823 0 0017.817 12 5.823 5.823 0 0012 6.183zM8.27 12A3.73 3.73 0 0112 8.27v7.434C9.94 15.73 8.27 14.061 8.27 12zm2.687-8.791V1.043C10.957.47 11.427 0 12 0c.574 0 1.043.47 1.043 1.043V3.21c0 .574-.47 1.043-1.043 1.043-.574 0-1.043-.47-1.043-1.043zM24 12c0 .574-.47 1.043-1.044 1.043h-2.165c-.574 0-1.043-.47-1.043-1.043 0-.574.47-1.043 1.043-1.043h2.165c.574 0 1.044.47 1.044 1.043zm-10.957 8.791v2.165c0 .574-.47 1.044-1.043 1.044-.574 0-1.043-.47-1.043-1.044v-2.165c0-.574.47-1.043 1.043-1.043.574 0 1.043.47 1.043 1.043zM3.21 13.043H1.043C.47 13.043 0 12.573 0 12c0-.574.47-1.043 1.043-1.043H3.21c.574 0 1.043.47 1.043 1.043 0 .574-.47 1.043-1.043 1.043zm14.27-6.521a1.04 1.04 0 010-1.487l1.512-1.513a1.04 1.04 0 011.487 0 1.04 1.04 0 010 1.487l-1.513 1.513a1.03 1.03 0 01-.73.313c-.287-.026-.548-.105-.757-.313zm3 12.495a1.04 1.04 0 010 1.487 1.03 1.03 0 01-.731.313 1.03 1.03 0 01-.73-.313l-1.54-1.539a1.04 1.04 0 010-1.487 1.04 1.04 0 011.487 0l1.513 1.54zM6.521 17.478a1.04 1.04 0 010 1.487l-1.513 1.513a1.03 1.03 0 01-.73.313 1.03 1.03 0 01-.731-.313 1.04 1.04 0 010-1.487l1.513-1.513c.391-.391 1.043-.391 1.46 0zm-3-12.495a1.04 1.04 0 010-1.487 1.04 1.04 0 011.487 0l1.513 1.513a1.04 1.04 0 010 1.487 1.03 1.03 0 01-.73.313 1.03 1.03 0 01-.731-.313L3.52 4.983z"/></svg></button>
+        <button class="button" type="button" id="toggle-fullscreen">ICON</button><span class="page-name">Главная</span>
+        <button class="button" type="button" id="toggle-color-scheme">ICON</button>
       </div>
     </header>
     <nav class="page-menu">
@@ -53,8 +49,7 @@
     <main>
       <section>
         <div class="container">
-          <h1>Привет<br><br>Я&nbsp;&ndash; <mark>Даниэль Пасько</mark>, верстаю корпоративные сайты и&nbsp;интерфейсы веб&#8209;приложений</h1>
-          <h2>Сейчас активно делаю внутренюю часть сервиса&nbsp;<a href="https://finom.co">Finom</a></h2>
+          <h1>Разные ништяки</h1>
         </div>
       </section>
     </main>

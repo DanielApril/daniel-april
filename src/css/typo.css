@@ -1,0 +1,25 @@
+body {
+	font-family: 'Jost', sans-serif;
+}
+
+h1 {
+	font-size: 44px;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
+mark {
+	background: none;
+	color: var(--cl-text-marked);
+}
+
+a {
+	color: var(--cl-text-link);
+}

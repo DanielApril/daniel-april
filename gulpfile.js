@@ -73,7 +73,7 @@ function css() {
 		.pipe(rucksack())
 		.pipe(concat('style.css'))
 		.pipe(gulp.dest(buildPaths.css))
-		.pipe(cssnano()) // --> minify css
+		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(browsersync.reload({ stream: true }))
 		.pipe(sourcemaps.write('.'))
