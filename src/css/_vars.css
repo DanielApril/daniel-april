@@ -2,17 +2,22 @@
 	--cl-peach: #FFAE8F;
 	--cl-purple: #3D1144;
 	--cl-rose: #CC135C;
+	--cl-finom: #ff5762;
 	--cl-beige: #FADFDE;
 	--cl-cupcake: #F1C5C2;
 	--cl-blue: #546FFE;
 	--cl-green: #3FD7A0;
+	--cl-white: #FFFFFF;
 
 	--cl-bg-global: var(--cl-beige);
 	--cl-bg-global-alt: var(--cl-cupcake);
 	--cl-bg-global-contrast: var(--cl-purple);
+	--cl-bg-global-contrast-alt: var(--cl-white);
 
 	--cl-text: var(--cl-purple);
 	--cl-text-contrast: var(--cl-beige);
 	--cl-text-marked: var(--cl-rose);
 	--cl-text-link: var(--cl-blue);
+
+	--media-reakpoint: 760px;
 }
